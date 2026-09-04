@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #090D16;
+    color: #F9FAFB;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-ink-850/80 border border-ink-600/60 backdrop-blur-sm;
+  }
+  .card-elevated {
+    @apply rounded-2xl bg-ink-800/90 border border-ink-600/60 shadow-2xl shadow-black/40 backdrop-blur-md;
+  }
+  .pill-btn {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200;
+  }
+  .pill-btn-primary {
+    @apply pill-btn bg-flame-500 text-white hover:bg-flame-400 hover:shadow-lg hover:shadow-flame-500/30;
+  }
+  .pill-btn-ghost {
+    @apply pill-btn bg-ink-700/50 text-slate-400 hover:text-white hover:bg-ink-600/60;
+  }
+  .metric-value {
+    @apply font-bold text-white tabular-nums tracking-tight;
+  }
+  .glow-text {
+    text-shadow: 0 0 20px rgba(255, 119, 0, 0.5);
+  }
+  .glow-emerald {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  }
+  .glow-flame {
+    box-shadow: 0 0 30px rgba(255, 119, 0, 0.35), inset 0 0 20px rgba(255, 119, 0, 0.05);
+  }
+  .glow-emerald-box {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.25), inset 0 0 20px rgba(16, 185, 129, 0.05);
+  }
+  .glow-flowmind {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.25), inset 0 0 20px rgba(139, 92, 246, 0.05);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0E12;
+}
+::-webkit-scrollbar-thumb {
+  background: #282A31;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3D47;
+}
+
+/* Ambient background gradient */
+.ambient-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 119, 0, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 20% 70%, rgba(34, 22, 12, 0.4), transparent),
+    #090D16;
+}
+
+/* Recharts overrides */
+.recharts-cartesian-axis-tick-value {
+  fill: #6B7280;
+  font-size: 11px;
+}
+.recharts-cartesian-grid-horizontal line {
+  stroke: #1E2028;
+}
+.recharts-tooltip-cursor {
+  stroke: #282A31;
+}
+.recharts-default-tooltip {
+  background-color: #111827 !important;
+  border: 1px solid #282A31 !important;
+  border-radius: 12px !important;
+}
